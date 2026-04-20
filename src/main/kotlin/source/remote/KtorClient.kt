@@ -1,4 +1,15 @@
 package source.remote
 
-//TODO: initialize and configure json object
-//TODO: initialize and configure http client with CIO engine and content negotiation plugin
+import io.ktor.client.*
+import io.ktor.client.engine.cio.*
+import io.ktor.client.plugins.contentnegotiation.*
+import io.ktor.serialization.kotlinx.json.*
+import kotlinx.serialization.json.Json
+
+val json = Json { ignoreUnknownKeys = true }
+
+fun httpClient() = HttpClient(CIO) {
+    install(ContentNegotiation) {
+        json(json)
+    }
+}
