@@ -29,6 +29,9 @@ dependencies {
     //mcp
     implementation("io.modelcontextprotocol:kotlin-sdk:${mcpVersion}")
     implementation("org.slf4j:slf4j-simple:${slf4jVersion}")
+    //koog
+    implementation("ai.koog:koog-agents:1.2.0")
+    implementation("ai.koog:koog-agents-additions:1.2.0-beta")
 }
 
 kotlin {
